@@ -1,0 +1,215 @@
+<!DOCTYPE html><html lang="zh" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>逃避linux | myflycat</title><noscript>Please enable JavaScript to view the site</noscript><link rel="icon" href="/img/pwa/favicon.ico"><!-- index.css--><link rel="stylesheet" href="/css/index.css?v=1.12.3"><!-- inject head--><link rel="canonical" href="http://example.com/2024/07/12/%E9%80%83%E9%81%BFlinux/"><link rel="stylesheet" href="https://cdn2.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css"><!-- aplayer--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"><!-- swiper--><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description" content="关于linux我已经无话可说了 use will over,来感受被linux支配的恐惧吧 到现在ubuntu我已经用了快一年了，我记得我当初为什么要装linux了，装了linux之后，报错 。 来感受一下报错 12345678910111213141516171819202122232425"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="myflycat"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/img/pwa/favicon.ico"><link rel="apple-touch-icon" href="/img/pwa/favicon.ico" sizes="180x180"><script>console.log(' %c Solitude %c ' + '1.12.3' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+    
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
+    
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
+    
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
+    
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
+        
+                if (name && keyObj[name]) return
+        
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+        }
+    })()</script><!-- global head--><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: undefined,
+    localsearch: undefined,
+    runtime: '2023-04-20 00:00:00',
+    lazyload: {
+        enable: false,
+        error: '/img/error_load.avif'
+    },
+    copyright: {"limit":50,"author":"Author: ..","link":"Link: ","source":"Source: myflycat","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."},
+    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: false,
+    lang: {"theme":{"dark":"Dark","light":"Light"},"copy":{"success":"Copied","error":"Copy failed"},"backtop":"Back to top","time":{"day":" days ago","hour":" hours ago","just":"just","min":" minutes ago","month":" months ago"},"day":" days","f12":"Developer mode is turned on, please follow the GPL.","totalk":"You don't need to delete blank lines, just type in your comments."},
+    aside: {
+        sayhello: {
+            morning: '一日之计在于晨',
+            noon: '吃饱了才有力气干活',
+            afternoon: '集中精力，攻克难关',
+            night: '不要太劳累了，早睡更健康',
+            goodnight: '睡个好觉，保证精力充沛',
+        },
+        sayhello2: [],
+        sayhello3: {
+            prefix: 'Long time no see,',
+            back: 'Welcome back again,',
+        },
+    },
+    covercolor: {
+        enable: false
+    },
+    comment: false,
+    lightbox: 'null',
+    post_ai: false,
+    right_menu: false,
+};</script><!-- page-config head--><script id="config-diff">var PAGE_CONFIG = {
+    is_post: true,
+    is_page: false,
+    is_home: false,
+    page: '',
+    toc: true,
+    comment: false,
+    ai_text: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body id="body"><!-- universe--><canvas id="universe"></canvas><!-- loading--><!-- console--><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="solitude st-close-fill"></i></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="Day and night switching"><i class="solitude st-moon-clear-fill"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" onclick="sco.switchHideAside()" title="Sidebar display control"><i class="solitude st-side-bar-fill"></i></span></div><div class="console-btn-item" id="consoleMusic" onclick="sco.musicToggle()"><span class="music-switch" title="Music switch"><i class="solitude st-disc-fill"></i></span></div></div><div class="console-mask" onclick="sco.hideConsole()"></div></div><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Archives</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a></div></div></div><span class="sidebar-menu-item-title">Function</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude st-moon-clear-fill"></i><span>Display mode</span></span></div><span class="sidebar-menu-item-title">Tags</span><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="card-tag-cloud"><a href="/tags/%E6%88%91/">我<sup>5</sup></a><a href="/tags/%E6%8E%A8%E8%8D%90/">推荐<sup>3</sup></a><a href="/tags/git/">git<sup>1</sup></a><a href="/tags/hexo/">hexo<sup>1</sup></a><a href="/tags/node-js/">node.js<sup>1</sup></a></div></div></div></div><!-- keyboard--><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a id="site-name" href="/" title="Back to home"><span class="title">Solitude</span></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">逃避linux</a></div></div><div id="menus"></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude st-arrow-up-line"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude st-menu-line"></i></a></div></div></div></nav><div class="coverdiv" id="coverdiv"><img class="nolazyload" id="post-cover" src="/img/default.avif" alt="逃避linux"></div><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="This article is a Original article, pay attention to the copyright.">Original</a><span class="post-meta-categories"><a class="post-meta-categories" href="/categories/%E5%89%8D%E8%A8%80/">前言</a></span><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%88%91/"><span class="tags-name tags-punctuation">我</span></a></div></div></div></div><h1 class="post-title">逃避linux</h1><div id="post-meta"><div class="meta-secondline"></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="关于linux我已经无话可说了"><a href="#关于linux我已经无话可说了" class="headerlink" title="关于linux我已经无话可说了"></a>关于linux我已经无话可说了</h1><ul>
+<li><span style="color:red">use will over,来感受被linux支配的恐惧吧</span></li>
+</ul>
+<ul>
+<li><p>到现在ubuntu我已经用了快一年了，我记得我当初为什么要装linux了，装了linux之后，<span style="color:red">报错</span> 。</p>
+</li>
+<li><p>来感受一下报错</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">忽略:46 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates/universe arm64 Packages</span><br><span class="line">获取:47 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates/universe amd64 c-n-f Metadata [7,208 B]</span><br><span class="line">忽略:8 http://cn.archive.ubuntu.com/ubuntu noble/main arm64 Packages           </span><br><span class="line">忽略:31 http://cn.archive.ubuntu.com/ubuntu noble/universe arm64 Packages      </span><br><span class="line">忽略:40 http://cn.archive.ubuntu.com/ubuntu noble-updates/main arm64 Packages  </span><br><span class="line">忽略:46 http://cn.archive.ubuntu.com/ubuntu noble-updates/universe arm64 Packages</span><br><span class="line">错误:8 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble/main arm64 Packages    </span><br><span class="line">  404  Not Found [IP: 101.6.15.130 80]</span><br><span class="line">忽略:31 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble/universe arm64 Packages</span><br><span class="line">忽略:40 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates/main arm64 Packages</span><br><span class="line">忽略:8 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble/main arm64 Packages    </span><br><span class="line">忽略:31 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble/universe arm64 Packages</span><br><span class="line">忽略:40 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates/main arm64 Packages</span><br><span class="line">获取:48 http://security.ubuntu.com/ubuntu noble-security/main i386 Packages [110 kB]</span><br><span class="line">获取:49 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [216 kB]</span><br><span class="line">获取:50 http://security.ubuntu.com/ubuntu noble-security/main arm64 Packages [205 kB]</span><br><span class="line">获取:50 http://security.ubuntu.com/ubuntu noble-security/main arm64 Packages [205 kB]</span><br><span class="line">获取:50 http://security.ubuntu.com/ubuntu noble-security/main arm64 Packages [205 kB]</span><br><span class="line">获取:50 http://security.ubuntu.com/ubuntu noble-security/main arm64 Packages [205 kB]</span><br><span class="line">错误:46 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates/universe arm64 Packages</span><br><span class="line">  404  Not Found [IP: 101.6.15.130 80]</span><br><span class="line">忽略:46 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates/universe arm64 Packages</span><br><span class="line">忽略:8 http://cn.archive.ubuntu.com/ubuntu noble/main arm64 Packages           </span><br><span class="line">忽略:50 http://security.ubuntu.com/ubuntu noble-security/main arm64 Packages   </span><br><span class="line">获取:55 http://security.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [2,680 B]</span><br><span class="line">忽略:56 http://security.ubuntu.com/ubuntu noble-security/universe arm64 Packages</span><br><span class="line">获取:57 http://security.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [4,564 B]</span><br><span class="line">忽略:31 http://cn.archive.ubuntu.com/ubuntu noble/universe arm64 Packages      </span><br><span class="line">忽略:40 http://cn.archive.ubuntu.com/ubuntu noble-updates/main arm64 Packages  </span><br><span class="line">忽略:8 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble/main arm64 Packages    </span><br><span class="line">忽略:46 http://cn.archive.ubuntu.com/ubuntu noble-updates/universe arm64 Packages</span><br><span class="line">忽略:31 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble/universe arm64 Packages</span><br><span class="line">忽略:40 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates/main arm64 Packages</span><br><span class="line">忽略:8 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble/main arm64 Packages    </span><br><span class="line">忽略:46 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates/universe arm64 Packages</span><br><span class="line">忽略:31 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble/universe arm64 Packages</span><br><span class="line">忽略:40 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates/main arm64 Packages</span><br><span class="line">忽略:46 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates/universe arm64 Packages</span><br><span class="line">忽略:8 http://cn.archive.ubuntu.com/ubuntu noble/main arm64 Packages           </span><br><span class="line">忽略:50 http://security.ubuntu.com/ubuntu noble-security/main arm64 Packages</span><br><span class="line">忽略:31 http://cn.archive.ubuntu.com/ubuntu noble/universe arm64 Packages      </span><br><span class="line">忽略:40 http://cn.archive.ubuntu.com/ubuntu noble-updates/main arm64 Packages  </span><br><span class="line">忽略:46 http://cn.archive.ubuntu.com/ubuntu noble-updates/universe arm64 Packages</span><br><span class="line">忽略:56 http://security.ubuntu.com/ubuntu noble-security/universe arm64 Packages</span><br><span class="line">错误:8 http://cn.archive.ubuntu.com/ubuntu noble/main arm64 Packages     </span><br><span class="line">  404  Not Found [IP: 101.6.15.130 80]</span><br><span class="line">47% [17 Packages store 73.4 MB] [正在等待报头]E: Transaction http://cn.archive.ubuntu.com/ubuntu/dists/noble/InRelease was already aborted and is aborted again</span><br><span class="line">错误:31 http://cn.archive.ubuntu.com/ubuntu noble/universe arm64 Packages</span><br><span class="line">  404  Not Found [IP: 101.6.15.130 80]</span><br><span class="line">错误:40 http://cn.archive.ubuntu.com/ubuntu noble-updates/main arm64 Packages</span><br><span class="line">  404  Not Found [IP: 101.6.15.130 80]</span><br><span class="line">49% [17 Packages store 73.4 MB] [正在等待报头] [正在等待报头]E: Transaction http://cn.archive.ubuntu.com/ubuntu/dists/noble-updates/InRelease was already aborted and is aborted again</span><br><span class="line">错误:46 http://cn.archive.ubuntu.com/ubuntu noble-updates/universe arm64 Packages</span><br><span class="line">  404  Not Found [IP: 101.6.15.130 80]</span><br><span class="line">忽略:50 http://security.ubuntu.com/ubuntu noble-security/main arm64 Packages</span><br><span class="line">忽略:56 http://security.ubuntu.com/ubuntu noble-security/universe arm64 Packages</span><br><span class="line">忽略:50 http://security.ubuntu.com/ubuntu noble-security/main arm64 Packages</span><br><span class="line">忽略:56 http://security.ubuntu.com/ubuntu noble-security/universe arm64 Packages</span><br><span class="line">忽略:50 http://security.ubuntu.com/ubuntu noble-security/main arm64 Packages</span><br><span class="line">忽略:56 http://security.ubuntu.com/ubuntu noble-security/universe arm64 Packages</span><br><span class="line">错误:50 http://security.ubuntu.com/ubuntu noble-security/main arm64 Packages</span><br><span class="line">  404  Not Found [IP: 91.189.91.82 80]</span><br><span class="line">忽略:56 http://security.ubuntu.com/ubuntu noble-security/universe arm64 Packages</span><br><span class="line">正在读取软件包列表... 完成</span><br><span class="line">N: 鉴于仓库 <span class="string">&#x27;http://cn.archive.ubuntu.com/ubuntu noble InRelease&#x27;</span> 不支持 <span class="string">&#x27;architecture&#x27;</span> 体系结构，跳过配置文件 <span class="string">&#x27;main/binary-architecture/Packages&#x27;</span> 的获取。</span><br><span class="line">N: 鉴于仓库 <span class="string">&#x27;http://cn.archive.ubuntu.com/ubuntu noble InRelease&#x27;</span> 不支持 <span class="string">&#x27;architecture&#x27;</span> 体系结构，跳过配置文件 <span class="string">&#x27;universe/binary-architecture/Packages&#x27;</span> 的获取。</span><br><span class="line">N: 鉴于仓库 <span class="string">&#x27;http://cn.archive.ubuntu.com/ubuntu noble-updates InRelease&#x27;</span> 不支持 <span class="string">&#x27;architecture&#x27;</span> 体系结构，跳过配置文件 <span class="string">&#x27;main/binary-architecture/Packages&#x27;</span> 的获取。</span><br><span class="line">N: 鉴于仓库 <span class="string">&#x27;http://cn.archive.ubuntu.com/ubuntu noble-updates InRelease&#x27;</span> 不支持 <span class="string">&#x27;architecture&#x27;</span> 体系结构，跳过配置文件 <span class="string">&#x27;universe/binary-architecture/Packages&#x27;</span> 的获取。</span><br><span class="line">N: 鉴于仓库 <span class="string">&#x27;http://security.ubuntu.com/ubuntu noble-security InRelease&#x27;</span> 不支持 <span class="string">&#x27;architecture&#x27;</span> 体系结构，跳过配置文件 <span class="string">&#x27;main/binary-architecture/Packages&#x27;</span> 的获取。</span><br><span class="line">N: 鉴于仓库 <span class="string">&#x27;http://security.ubuntu.com/ubuntu noble-security InRelease&#x27;</span> 不支持 <span class="string">&#x27;architecture&#x27;</span> 体系结构，跳过配置文件 <span class="string">&#x27;universe/binary-architecture/Packages&#x27;</span> 的获取。</span><br><span class="line">E: Transaction http://cn.archive.ubuntu.com/ubuntu/dists/noble/InRelease was already aborted and is aborted again</span><br><span class="line">E: Transaction http://cn.archive.ubuntu.com/ubuntu/dists/noble-updates/InRelease was already aborted and is aborted again</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>没错真就是报错了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了，我现在已经放弃了。</p>
+</li>
+<li><p>问题产生的原因：我的系统用的是amd64,而软件包是arm64,它的软件源无amd64,所以就报错了，要改的话，我的电脑是x86_64的，设置交叉编译器，烦死了。</p>
+</li>
+</ul>
+<h2 id="科普-amd和arm"><a href="#科普-amd和arm" class="headerlink" title="科普_amd和arm"></a>科普_amd和arm</h2><ul>
+<li>简单来说，一句话概括就是：arm是为了低功耗，amd是为了高性能。在做选择时，按照这个根据需求来判断即可。</li>
+</ul>
+<p>amd版和arm版区别如下</p>
+<p>1、两者架构定位不同，arm基于精简指令(RISC)，本身定位于嵌入式平台，简化了硬件逻辑的设计，减少了晶体管，从而降低功耗，流水线等控制并不复杂，进一步降低了晶体管数量，主要是面对轻量级的、目标明确单一的程序，所以主要都是移动端使用；</p>
+<p>2、而amd基于复杂指令集CISC，有很多机器指令，只为完成某项专门任务，所以使得硬件逻辑很复杂，加上其他流水线指令集并行、超线程、虚拟化等，复杂度很高，晶体管数量庞大，主要定位计算密集场景，例如多媒体编辑、科研计算等，所以将x86和arm在移动端环境比较并不准确。</p>
+<h1 id="Why-I-use-linux"><a href="#Why-I-use-linux" class="headerlink" title="Why I use linux?"></a>Why I use linux?</h1><p>电脑 <span style="color:red">垃圾</span> </p>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>Linux的优点有很多，以下是其中一些主要的优点：</p>
+<ul>
+<li><p>1.开源：Linux是一个开源操作系统，这意味着它的源代码是公开的，任何人都可以查看、修改和分发。这使得Linux具有高度的灵活性和可定制性。</p>
+</li>
+<li><p>2.稳定性：Linux被广泛认为是一个非常稳定的操作系统。它能够长时间运行而不需要重新启动，这对于服务器和大型计算机系统非常重要。</p>
+</li>
+<li><p>3.安全性：相对于其他操作系统，Linux在安全性方面表现出色。它有一个强大的权限管理系统，可以限制用户对系统的访问权限，从而减少潜在的安全风险。</p>
+</li>
+<li><p>4.多用户支持：Linux支持多用户环境，多个用户可以同时使用同一台计算机而不会相互干扰。这对于服务器和共享计算机非常有用。</p>
+</li>
+<li><p>5.多任务处理：Linux是一个多任务操作系统，可以同时运行多个程序。这使得它非常适合用于高性能计算和服务器环境。</p>
+</li>
+<li><p>6.跨平台：Linux可以运行在各种不同的硬件平台上，包括个人电脑、服务器、嵌入式系统等。这使得它成为一个非常灵活和可移植的操作系统。</p>
+</li>
+<li><p>7.可扩展性：Linux是一个可扩展的操作系统，可以通过安装各种不同的软件包来扩展其功能。这使得它非常适合于各种不同的应用需求。</p>
+</li>
+</ul>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
+<li>1.学习曲线：Linux是一个相对复杂的操作系统，对于新用户来说，学习曲线可能比较陡峭。想想windows简单易用，学习10分钟就能上手，但是linux需要学习好几个小时。<span style="color:red">现在有些人，呃呃呃，赛博文盲</span> ，steam</li>
+<li>2.没有windows的广大用户群：Linux的用户群体相对较小，这使得它在市场上没有windows那么受欢迎。<span style="color:red">有些软件没有linux版本，</span> wechat和阿里云盘等等。</li>
+<li>3.系统配置复杂：Linux的配置比较复杂，需要一定的技术知识和经验才能进行正确配置。这使得它在初始配置上可能比较困难。来个wine,难道你能玩得转吗？</li>
+<li>4.个性化定制：Linux的定制化程度相对较高，这使得它在个性化方面可能不如windows那么方便。</li>
+<li>5.软件安装和管理复杂：Linux的软件安装和管理比较复杂，需要一定的技术知识和经验才能进行正确安装和管理。这使得它在软件管理方面可能不如windows那么方便。</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Linux是一个非常强大的操作系统，它具有许多优点，例如开源、稳定性、安全性、多用户支持、多任务处理、跨平台、可扩展性等。但是，它也有一些缺点，例如学习曲线、没有windows的广大用户群、系统配置复杂、个性化定制、软件安装和管理复杂等。因此，在选择操作系统时，需要根据自己的需求和喜好来进行选择。<span style="color:red">如果你爱折腾</span> 来个linux。</p>
+<p> 参考</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-intro.html">Linux 简介</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author_group"><a class="post-copyright__author_img" href="/about/"><img class="post-copyright__author_img_front" src="/img/pwa/favicon.ico"></a><div class="post-copyright__author_name">myflycat</div><div class="post-copyright__author_desc"></div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" onclick="RemoveRewardMask()"></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">This piece of writing is an original article, utilizing the<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>Agreement. For complete reproduction, please acknowledge the source as Courtesy of<a href="/">myflycat</a></span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%88%91/"><span class="tags-punctuation"></span>我<span class="tagsPageCount">5</span></a></div></div></div><nav class="needEndHide pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/06/15/%E5%B8%B8%E7%94%A8%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/"><div class="pagination-info"><div class="label">Next</div><div class="next_info">常用电脑软件</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="author-info__top-group"><div class="author-info__sayhi" id="author-info__sayhi" onclick="sco.changeSayHelloText()">sayhello.morning</div></div></div><div class="avatar-img-group"><img class="avatar-img" alt="Avatar" src="/img/avatar.avif"><div class="avatar-sticker"><img class="avatar-sticker-img" src="https://7.isyangs.cn/34/65f2e4e0423cc-34.png" alt="Mood sticker"></div></div><div class="author-info__description_group"><div class="author-info__description">分享自己对编程的<b>热爱</b>，对美好生活的<b>向往</b>，对知识海洋<b>探索历程</b>。</div><div class="author-info__description2">相信你可以在这里找到对你有用的知识和教程。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/about/"><div class="author-info__name">..</div><div class="author-info__desc"></div></a><div class="card-info-social-icons is-center"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude st-menu-line"></i><span>Table of contents</span></div><div class="toc-content" id="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8Elinux%E6%88%91%E5%B7%B2%E7%BB%8F%E6%97%A0%E8%AF%9D%E5%8F%AF%E8%AF%B4%E4%BA%86"><span class="toc-text">关于linux我已经无话可说了</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%91%E6%99%AE-amd%E5%92%8Carm"><span class="toc-text">科普_amd和arm</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-I-use-linux"><span class="toc-text">Why I use linux?</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-text">优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-text">缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude st-map-line"></i><span>New posts</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/07/12/%E9%80%83%E9%81%BFlinux/" title="逃避linux"><img alt="逃避linux" src="/img/default.avif"></a><div class="content"><a class="title" href="/2024/07/12/%E9%80%83%E9%81%BFlinux/" title="逃避linux">逃避linux</a><a class="article-recent_post_categories" href="/2024/07/12/%E9%80%83%E9%81%BFlinux/">前言</a></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/15/%E5%B8%B8%E7%94%A8%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/" title="常用电脑软件"><img alt="常用电脑软件" src="/img/default.avif"></a><div class="content"><a class="title" href="/2024/06/15/%E5%B8%B8%E7%94%A8%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/" title="常用电脑软件">常用电脑软件</a><a class="article-recent_post_categories" href="/2024/06/15/%E5%B8%B8%E7%94%A8%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/">一些项目</a></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/06/%E9%A1%B9%E7%9B%AE%E6%8E%A8%E8%8D%90/" title="开源项目推荐"><img alt="开源项目推荐" src="/img/default.avif"></a><div class="content"><a class="title" href="/2024/04/06/%E9%A1%B9%E7%9B%AE%E6%8E%A8%E8%8D%90/" title="开源项目推荐">开源项目推荐</a><a class="article-recent_post_categories" href="/2024/04/06/%E9%A1%B9%E7%9B%AE%E6%8E%A8%E8%8D%90/">一些项目</a></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/02/18/New-Year/" title="New-Year"><img alt="New-Year" src="/img/default.avif"></a><div class="content"><a class="title" href="/2024/02/18/New-Year/" title="New-Year">New-Year</a><a class="article-recent_post_categories" href="/2024/02/18/New-Year/">历年回顾</a></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/02/06/2023%E5%B9%B4%E5%9B%9E%E9%A1%BE/" title="2023年回顾"><img alt="2023年回顾" src="/img/default.avif"></a><div class="content"><a class="title" href="/2024/02/06/2023%E5%B9%B4%E5%9B%9E%E9%A1%BE/" title="2023年回顾">2023年回顾</a><a class="article-recent_post_categories" href="/2024/02/06/2023%E5%B9%B4%E5%9B%9E%E9%A1%BE/">历年回顾</a></div></div></div></div></div></div></main><footer id="footer"><div id="st-footer-bar"><div class="footer-logo"><span>Solitude</span></div><div class="footer-bar-description">来自 Efu 的文章</div><a class="footer-bar-link" href="/about/">了解更多</a></div><div id="footer_deal"></div><div id="st-footer"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2023 - 2024 By&nbsp;<a class="footer-bar-link" href="/">..</a></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" alt="主题">主题</a><a class="footer-bar-link cc" href="/null" aria-label="copyright"><i class="solitude st-copyright-line"></i><i class="solitude st-creative-commons-by-line"></i><i class="solitude st-creative-commons-nc-line"></i><i class="solitude st-creative-commons-nd-line"></i></a></div></div></div></footer></div><!-- right_menu--><!-- inject body--><div><script src="/js/utils.js?v=1.12.3"></script><script src="/js/main.js?v=1.12.3"></script><script src="/js/third_party/waterfall.min.js?v=1.12.3"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pjax/0.2.8/pjax.min.js"></script><script src="/js/third_party/universe.min.js?v=1.12.3"></script><script>dark()
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script><script>var meting_api = 'https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r';</script><script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/meting/2.0.1/Meting.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js"></script><div class="js-pjax"></div></div><!-- pjax--><script>const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: ['title','#body-wrap','#site-config','meta[name="description"]','.js-pjax','meta[property^="og:"]','#config-diff'],
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+})
+
+document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+})
+
+document.addEventListener('pjax:complete', () => {
+    window.refreshFn()
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+        pjax.loadUrl('/404.html')
+    }
+})</script><!-- theme--><script>initTheme = () => {
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined)
+        document.documentElement.setAttribute('data-theme', 'dark');
+    else
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    typeof rm === 'object' && rm.mode(cachedMode === undefined || cachedMode === 'dark')
+}
+initTheme()</script><!-- google adsense--><!-- search--><!-- Tianli-Talk--><!-- music--><div class="needEndHide" id="nav-music" onclick="sco.musicToggle()"><div id="nav-music-hoverTips">Paused</div><meting-js id="7516528225" server="netease" type="playlist" mutex="true" preload="none" data-lrctype="0" order="random" theme="var(--efu-main)"></meting-js></div></body></html><script>const posts=["2024/07/12/逃避linux/","2024/06/15/常用电脑软件/","2024/04/06/项目推荐/","2024/02/18/New-Year/","2024/02/06/2023年回顾/","2024/02/02/EVA/","2024/02/02/葬送的芙莉莲/","2024/02/02/前言/","2024/02/02/hexo/","2024/02/02/git介绍/","2024/02/02/node-js介绍/"];function toRandomPost(){ pjax.loadUrl('/'+posts[Math.floor(Math.random()*posts.length)]); }</script>
